@@ -1,0 +1,32 @@
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+
+	<div class="row pt-5 m-0">
+		<div class="col-md-5"></div>
+		<div class="col-md-2">
+			<div class="upload-btn-wrapper">
+				<input type="file" name="files" accept="image/*" (change)="onFileSelect($event)" multiple>
+				<button class="btn">Select file</button>
+			</div>
+		</div>
+		<div class="col-md-5"></div>
+	</div>
+	<div class="row pt-5 m-0">
+		<div class="col-md-12">
+			<b *ngIf="showTitle">Compressed Image List</b>
+	<div *ngFor="let item of processedImages">
+		<img src="{{item.compressedImage.imageDataUrl}}" height="200" width="200">
+	</div>
+			<button type="submit" mat-raised-button color="primary" *ngIf="showTitle">Submit Images</button>
+		</div>
+	</div>
+</form>
+<!-- <div> -->
+	<!-- <h1 *ngIf="!showTitle">Please wait..Image is compressing</h1> -->
+	<!-- <b *ngIf="showTitle">Original Image List</b>
+ 
+   <div *ngFor="let item of processedImages">
+	 <img src="{{item.imageDataUrl}}" height="400" width="500">
+   </div> -->
+
+	
+<!-- </div> -->

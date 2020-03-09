@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'photoUpload';
+  title = 'Angular Tutorial';
+  createProduct: boolean;
+  message: string;
+
+  onCreateProduct() {
+    this.createProduct = true;
+    this.message = '';
+  }
+
+  onProductSubmit(data) {
+    this.createProduct = false;
+    this.message = data.message;
+  }
 }
